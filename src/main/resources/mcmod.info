@@ -1,0 +1,16 @@
+[
+{
+  "modid": "gtcebees",
+  "name": "GTCEBees",
+  "description": " An addon for GregTech Community Edition and Forestry, adding the Bees from GT5U.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TheEmosewaPixel","Bartz24"],
+  "credits": "The creators of GTCE most importantly, GregoriusT.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["gregtech","forestry"]
+}
+]
