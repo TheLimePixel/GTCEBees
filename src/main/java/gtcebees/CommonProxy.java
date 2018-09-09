@@ -1,8 +1,14 @@
 package gtcebees;
 
+import forestry.api.recipes.ICentrifugeRecipe;
+import forestry.api.recipes.RecipeManagers;
+import gregtech.api.recipes.Recipe;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +25,16 @@ public class CommonProxy {
     }
 
     public void postInit() {
-
+        for (ICentrifugeRecipe recipe : RecipeManagers.centrifugeManager.recipes()) {
+            SimpleRecipeBuilder builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder();
+            builder.inputs(recipe.getInput().copy());
+            for (ItemStack stack : recipe.getAllProducts().keySet()) {
+                builder.chancedOutput(stack.copy(), (int) (recipe.getAllProducts().get(stack) * (float) Recipe.getMaxChancedValue()));
+            }
+            builder.EUt(32);
+            builder.duration(240);
+            builder.buildAndRegister();
+        }
     }
 
 

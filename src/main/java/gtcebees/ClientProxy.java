@@ -13,7 +13,7 @@ public class ClientProxy extends CommonProxy {
     }
 
     public void postInit() {
-
+super.postInit();
     }
 
     @SubscribeEvent
