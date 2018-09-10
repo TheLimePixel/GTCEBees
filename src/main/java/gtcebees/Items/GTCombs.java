@@ -1,5 +1,6 @@
 package gtcebees.Items;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.IStringSerializable;
 
 import java.awt.*;
@@ -47,6 +48,8 @@ public enum GTCombs implements IStringSerializable {
     public final int primaryColor;
     public final int secondaryColor;
     private final boolean secret;
+
+    public static Item combItem = new GTCombItem();
 
     GTCombs(Color primary, Color secondary) {
         this(primary, secondary, false);
