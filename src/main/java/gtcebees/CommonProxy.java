@@ -1,6 +1,7 @@
 package gtcebees;
 
 import forestry.api.recipes.ICentrifugeRecipe;
+import forestry.api.recipes.ISqueezerRecipe;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
@@ -31,8 +32,18 @@ public class CommonProxy {
             for (ItemStack stack : recipe.getAllProducts().keySet()) {
                 builder.chancedOutput(stack.copy(), (int) (recipe.getAllProducts().get(stack) * (float) Recipe.getMaxChancedValue()));
             }
-            builder.EUt(32);
-            builder.duration(240);
+            builder.EUt(5);
+            builder.duration(128);
+            builder.buildAndRegister();
+        }
+
+        for (ISqueezerRecipe recipe : RecipeManagers.squeezerManager.recipes()) {
+            SimpleRecipeBuilder builder = RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder();
+            builder.inputs(recipe.getResources().get(1));
+            builder.chancedOutput(recipe.getRemnants().copy(), (int) recipe.getRemnantsChance());
+            builder.fluidOutputs(recipe.getFluidOutput().copy());
+            builder.EUt(2);
+            builder.duration(400);
             builder.buildAndRegister();
         }
     }
