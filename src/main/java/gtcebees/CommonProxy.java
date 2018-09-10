@@ -37,16 +37,6 @@ public class CommonProxy {
             builder.duration(128);
             builder.buildAndRegister();
         }
-
-        for (ISqueezerRecipe recipe : RecipeManagers.squeezerManager.recipes()) {
-            SimpleRecipeBuilder builder = RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder();
-            builder.inputs(recipe.getResources().get(1));
-            builder.chancedOutput(recipe.getRemnants().copy(), (int) recipe.getRemnantsChance());
-            builder.fluidOutputs(recipe.getFluidOutput().copy());
-            builder.EUt(2);
-            builder.duration(400);
-            builder.buildAndRegister();
-        }
     }
 
 
