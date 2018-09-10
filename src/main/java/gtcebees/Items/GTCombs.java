@@ -49,7 +49,7 @@ public enum GTCombs implements IStringSerializable {
     public final int secondaryColor;
     private final boolean secret;
 
-    public static Item combItem = new GTCombItem();
+    public static GTCombItem combItem = new GTCombItem();
 
     GTCombs(Color primary, Color secondary) {
         this(primary, secondary, false);
