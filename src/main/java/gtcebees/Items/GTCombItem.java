@@ -5,6 +5,7 @@ import forestry.api.core.Tabs;
 import forestry.core.config.Config;
 import forestry.core.items.IColoredItem;
 import forestry.core.items.ItemForestry;
+import gtcebees.GTCEBees;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +18,8 @@ public class GTCombItem extends ItemForestry implements IColoredItem {
         setMaxDamage(0);
         setHasSubtypes(true);
         setCreativeTab(Tabs.tabApiculture);
+        setRegistryName(GTCEBees.MODID, "comb");
+        setUnlocalizedName(GTCEBees.MODID + ":comb");
     }
 
     @Override
