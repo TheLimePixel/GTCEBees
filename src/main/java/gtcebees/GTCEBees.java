@@ -1,5 +1,7 @@
 package gtcebees;
 
+import gtcebees.Bees.GTBees;
+import gtcebees.Recipes.ForestryMachineRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -36,6 +38,8 @@ public class GTCEBees {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        ForestryMachineRecipes.init();
+        GTBees.initBees();
     }
 
     @EventHandler

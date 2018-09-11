@@ -2,14 +2,9 @@ package gtcebees.Items;
 
 import forestry.api.core.IModelManager;
 import forestry.api.core.Tabs;
-import forestry.core.config.Config;
 import forestry.core.items.IColoredItem;
 import forestry.core.items.ItemForestry;
-import forestry.core.models.ModelManager;
-import gtcebees.ClientProxy;
 import gtcebees.GTCEBees;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -52,13 +47,8 @@ public class GTCombItem extends ItemForestry implements IColoredItem {
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
-        if (this.isInCreativeTab(tab)) {
-            for (int i = 0; i < GTCombs.VALUES.length; i++) {
-                GTCombs honeyComb = GTCombs.get(i);
-                if (!honeyComb.isSecret() || Config.isDebug) {
-                    subItems.add(new ItemStack(this, 1, i));
-                }
-            }
+        for (int i = 0; i < GTCombs.VALUES.length; i++) {
+            subItems.add(new ItemStack(this, 1, i));
         }
     }
 
