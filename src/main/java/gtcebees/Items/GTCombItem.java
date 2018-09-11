@@ -63,8 +63,8 @@ public class GTCombItem extends ItemForestry implements IColoredItem {
     }
 
 
-    public ItemStack getComb(GTCombs honeyComb, int amount) {
-        return new ItemStack(this, amount, honeyComb.ordinal());
+    public static ItemStack getComb(GTCombs honeyComb, int amount) {
+        return new ItemStack(GTCombs.combItem, amount, honeyComb.ordinal());
     }
 
     @Override
