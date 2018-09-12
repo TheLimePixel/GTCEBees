@@ -50,8 +50,4 @@ public class GTCEBees {
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
     }
-
-    public static IBlockState getStateFromMaterial(Material material) {
-        return MetaBlocks.COMPRESSED.get(material).getStateFromMeta(((BlockCompressed) MetaBlocks.COMPRESSED.get(material)).variantProperty.getAllowedValues().indexOf(material));
-    }
 }
