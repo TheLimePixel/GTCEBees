@@ -1,15 +1,11 @@
 package gtcebees;
 
-<<<<<<< HEAD
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.type.Material;
 import gregtech.common.blocks.BlockCompressed;
 import gregtech.common.blocks.MetaBlocks;
-import net.minecraft.block.state.IBlockState;
-=======
 import gtcebees.Bees.GTBees;
 import gtcebees.Recipes.ForestryMachineRecipes;
->>>>>>> cb8912f579640bf422c141a076e3309f01ce532f
+import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -55,8 +51,7 @@ public class GTCEBees {
         proxy.postInit();
     }
 
-    public static IBlockState getStateFromMaterial(Material material)
-    {
-        return MetaBlocks.COMPRESSED.get(material).getStateFromMeta(((BlockCompressed)MetaBlocks.COMPRESSED.get(material)).variantProperty.getAllowedValues().indexOf(material));
+    public static IBlockState getStateFromMaterial(Material material) {
+        return MetaBlocks.COMPRESSED.get(material).getStateFromMeta(((BlockCompressed) MetaBlocks.COMPRESSED.get(material)).variantProperty.getAllowedValues().indexOf(material));
     }
 }
