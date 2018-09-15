@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public enum GTBranches implements IBranchDefinition {
-    FUEL("Fuelis") {
+    FUELIS("Fuelis") {
         @Override
         protected void setBranchProperties(IAllele[] alleles) {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.SHORTER);
@@ -31,7 +31,7 @@ public enum GTBranches implements IBranchDefinition {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.CAVE_DWELLING, false);
         }
     },
-    GEM("Ornamentis") {
+    ORNAMENTIS("Ornamentis") {
         @Override
         protected void setBranchProperties(IAllele[] alleles) {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.SHORTER);
@@ -47,7 +47,7 @@ public enum GTBranches implements IBranchDefinition {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.CAVE_DWELLING, false);
         }
     },
-    METAL("Metaliferis") {
+    METALIFERIS("Metaliferis") {
         @Override
         protected void setBranchProperties(IAllele[] alleles) {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.SHORTER);
@@ -63,7 +63,7 @@ public enum GTBranches implements IBranchDefinition {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.CAVE_DWELLING, false);
         }
     },
-    MINERAL("Mineralis") {
+    MINERALLIS("Mineralis") {
         @Override
         protected void setBranchProperties(IAllele[] alleles) {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.SHORTER);
@@ -79,7 +79,7 @@ public enum GTBranches implements IBranchDefinition {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.CAVE_DWELLING, false);
         }
     },
-    RADIOACTIVE("Criticalis") {
+    CRITICALIS("Criticalis") {
         @Override
         protected void setBranchProperties(IAllele[] alleles) {
             AlleleHelper.getInstance().set(alleles, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.SHORTER);

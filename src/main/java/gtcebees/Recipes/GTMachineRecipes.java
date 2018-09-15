@@ -1,32 +1,24 @@
 package gtcebees.Recipes;
 
 import forestry.core.ModuleCore;
-import gregtech.api.recipes.CountableIngredient;
-import gregtech.api.recipes.ModHandler;
+import forestry.core.fluids.Fluids;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.util.GTUtility;
+import gregtech.common.items.MetaItems;
 import gtcebees.Items.GTCombItem;
 import gtcebees.Items.GTCombs;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class GTMachineRecipes {
-    public static void init() {
-        List<ItemStack> allWoodLogs = OreDictionary.getOres("logWood").stream()
-                .flatMap(stack -> ModHandler.getAllSubItems(stack).stream())
-                .collect(Collectors.toList());
+    public static void postInit() {
+        //Impregnated Recipes
+        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(8).duration(16).circuitMeta(1).input(OrePrefix.log, Materials.Wood, 8).fluidInputs(Fluids.SEED_OIL.getFluid(250)).outputs(ModuleCore.getItems().impregnatedCasing.getItemStack()).buildAndRegister();
+        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(16).duration(64).circuitMeta(8).input(OrePrefix.log, Materials.Wood).fluidInputs(Fluids.SEED_OIL.getFluid(50)).outputs(ModuleCore.getItems().stickImpregnated.getItemStack()).buildAndRegister();
 
-        for (ItemStack wood : allWoodLogs) {
-            RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(8).duration(16).circuitMeta(1).inputs(GTUtility.copyAmount(8, wood)).fluidInputs(Materials.SeedOil.getFluid(250)).outputs(ModuleCore.getItems().impregnatedCasing.getItemStack()).buildAndRegister();
-            RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(16).duration(64).circuitMeta(8).inputs(CountableIngredient.from(wood)).fluidInputs(Materials.SeedOil.getFluid(50)).outputs(ModuleCore.getItems().stickImpregnated.getItemStack()).buildAndRegister();
-        }
-        RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt(128).duration(256).inputs(ModuleCore.getItems().phosphor.getItemStack()).outputs(OreDictUnifier.get(OrePrefix.dust, Materials.Phosphor)).fluidOutputs(Materials.Lava.getFluid(800)).buildAndRegister();
+        //Non-generated Fluid Extractor Recipes
+        RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt(128).duration(256).inputs(ModuleCore.getItems().phosphor.getItemStack()).chancedOutput(OreDictUnifier.get(OrePrefix.dust, Materials.Phosphor), 1000).fluidOutputs(Materials.Lava.getFluid(800)).buildAndRegister();
+        RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt(4).duration(128).inputs(MetaItems.CROP_DROP_OIL_BERRY.getStackForm()).fluidOutputs(Materials.Oil.getFluid(100)).buildAndRegister();
 
         //Comb Autoclave Recipes
         RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder().EUt(384).duration(1280).inputs(GTCombItem.getComb(GTCombs.LIGNITE, 16)).fluidInputs(Materials.UUMatter.getFluid(1)).outputs(OreDictUnifier.get(OrePrefix.crushedPurified, Materials.Lignite)).buildAndRegister();

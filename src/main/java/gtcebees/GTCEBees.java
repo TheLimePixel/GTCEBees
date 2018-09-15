@@ -5,6 +5,7 @@ import gregtech.common.blocks.BlockCompressed;
 import gregtech.common.blocks.MetaBlocks;
 import gtcebees.Bees.GTBees;
 import gtcebees.Recipes.ForestryMachineRecipes;
+import gtcebees.Recipes.GTMachineRecipes;
 import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -49,5 +50,6 @@ public class GTCEBees {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
+        GTMachineRecipes.postInit();
     }
 }

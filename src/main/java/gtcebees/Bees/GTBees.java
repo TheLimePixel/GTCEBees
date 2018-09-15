@@ -27,8 +27,8 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public enum GTBees implements IBeeDefinition {
-    //Fuels
-    CLAY(GTBranches.FUEL, "clay", true, new Color(0x19d0ec), new Color(0xe0c113)) {
+    //FUELISs
+    CLAY(GTBranches.FUELIS, "clay", true, new Color(0x19d0ec), new Color(0xe0c113)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(ModuleApiculture.getItems().beeComb.get(EnumHoneyComb.HONEY, 1), 0.3f);
@@ -44,7 +44,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.INDUSTRIOUS, BeeDefinition.DILIGENT, 20);
         }
     },
-    SLIME(GTBranches.FUEL, "slime", true, new Color(0x4e9e55), new Color(0x00e012)) {
+    SLIME(GTBranches.FUELIS, "slime", true, new Color(0x4e9e55), new Color(0x00e012)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.RUBBERY, 1), 0.3f);
@@ -60,7 +60,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.MARSHY, CLAY, 15);
         }
     },
-    LIGNITE(GTBranches.FUEL, "lignite", true, new Color(0x906237), new Color(0x522d0a)) {
+    LIGNITE(GTBranches.FUELIS, "lignite", true, new Color(0x906237), new Color(0x522d0a)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(ModuleApiculture.getItems().beeComb.get(EnumHoneyComb.HONEY, 1), 0.15f);
@@ -76,7 +76,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.RURAL, CLAY, 20);
         }
     },
-    RUBBER(GTBranches.FUEL, "rubbery", true, new Color(0x2e8f5b), new Color(0xdcc289)) {
+    RUBBER(GTBranches.FUELIS, "rubbery", true, new Color(0x2e8f5b), new Color(0xdcc289)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(MetaItems.RUBBER_DROP.getStackForm(), 0.15f);
@@ -92,7 +92,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(SLIME, LIGNITE, 25);
         }
     },
-    COAL(GTBranches.FUEL, "coal", true, new Color(0x666666), new Color(0x484848)) {
+    COAL(GTBranches.FUELIS, "coal", true, new Color(0x666666), new Color(0x484848)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.LIGNITE, 1), 0.3f);
@@ -108,7 +108,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.INDUSTRIOUS, LIGNITE, 18);
         }
     },
-    OIL(GTBranches.FUEL, "oil", true, new Color(0x4c4c4c), new Color(0x2d2d2d)) {
+    OIL(GTBranches.FUELIS, "oil", true, new Color(0x4c4c4c), new Color(0x2d2d2d)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.RUBBERY, 1), 0.3f);
@@ -124,7 +124,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(COAL, RUBBER, 8);
         }
     },
-    REDSTONE(GTBranches.GEM, "redstone", true, new Color(0x7d0f0f), new Color(0xb81616)) {
+    REDSTONE(GTBranches.ORNAMENTIS, "redstone", true, new Color(0x7d0f0f), new Color(0xb81616)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -140,7 +140,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.INDUSTRIOUS, BeeDefinition.DEMONIC, 20);
         }
     },
-    LAPIS(GTBranches.GEM, "lapis", true, new Color(0x1947d), new Color(0x3e5fbf)) {
+    LAPIS(GTBranches.ORNAMENTIS, "lapis", true, new Color(0x1947d), new Color(0x3e5fbf)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -156,7 +156,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.DEMONIC, BeeDefinition.IMPERIAL, 20);
         }
     },
-    CERTUS(GTBranches.GEM, "certus", true, new Color(0x57cffb), new Color(0xaedded)) {
+    CERTUS(GTBranches.ORNAMENTIS, "certus", true, new Color(0x57cffb), new Color(0xaedded)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -172,7 +172,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.HERMITIC, LAPIS, 20);
         }
     },
-    RUBY(GTBranches.GEM, "ruby", true, new Color(0xe6005c), new Color(0xbe004c)) {
+    RUBY(GTBranches.ORNAMENTIS, "ruby", true, new Color(0xe6005c), new Color(0xbe004c)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -188,7 +188,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(REDSTONE, DIAMOND, 10);
         }
     },
-    SAPPHIRE(GTBranches.GEM, "sapphire", true, new Color(0x0033cc), new Color(0x002185)) {
+    SAPPHIRE(GTBranches.ORNAMENTIS, "sapphire", true, new Color(0x0033cc), new Color(0x002185)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -204,7 +204,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(CERTUS, LAPIS, 10);
         }
     },
-    DIAMOND(GTBranches.GEM, "diamond", true, new Color(0xccffff), new Color(0xa3cccc)) {
+    DIAMOND(GTBranches.ORNAMENTIS, "diamond", true, new Color(0xccffff), new Color(0xa3cccc)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -220,7 +220,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(CERTUS, COAL, 6);
         }
     },
-    OLIVINE(GTBranches.GEM, "olivine", true, new Color(0x248f24), new Color(0xbeedbe)) {
+    OLIVINE(GTBranches.ORNAMENTIS, "olivine", true, new Color(0x248f24), new Color(0xbeedbe)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -236,7 +236,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(CERTUS, BeeDefinition.ENDED, 10);
         }
     },
-    EMERALD(GTBranches.GEM, "emerald", true, new Color(0x248f24), new Color(0x2bab2b)) {
+    EMERALD(GTBranches.ORNAMENTIS, "emerald", true, new Color(0x248f24), new Color(0x2bab2b)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.STONE, 1), 0.3f);
@@ -252,7 +252,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(OLIVINE, DIAMOND, 8);
         }
     },
-    COPPER(GTBranches.METAL, "copper", true, new Color(0xff6600), new Color(0xca5100)) {
+    COPPER(GTBranches.METALIFERIS, "copper", true, new Color(0xff6600), new Color(0xca5100)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -268,7 +268,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.MAJESTIC, CLAY, 25);
         }
     },
-    TIN(GTBranches.METAL, "tin", true, new Color(0xd4d4d4), new Color(0xcdcdcd)) {
+    TIN(GTBranches.METALIFERIS, "tin", true, new Color(0xd4d4d4), new Color(0xcdcdcd)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -284,7 +284,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(CLAY, BeeDefinition.DILIGENT, 25);
         }
     },
-    LEAD(GTBranches.METAL, "lead", true, new Color(0x666699), new Color(0x9393b8)) {
+    LEAD(GTBranches.METALIFERIS, "lead", true, new Color(0x666699), new Color(0x9393b8)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -300,7 +300,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(COAL, COPPER, 25);
         }
     },
-    IRON(GTBranches.METAL, "iron", true, new Color(0xda9147), new Color(0xde9c59)) {
+    IRON(GTBranches.METALIFERIS, "iron", true, new Color(0xda9147), new Color(0xde9c59)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -316,7 +316,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(TIN, COPPER, 25);
         }
     },
-    STEEL(GTBranches.METAL, "steel", true, new Color(0x808080), new Color(0x8a8a8a)) {
+    STEEL(GTBranches.METALIFERIS, "steel", true, new Color(0x808080), new Color(0x8a8a8a)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -332,7 +332,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(IRON, COAL, 20);
         }
     },
-    NICKEL(GTBranches.METAL, "nickel", true, new Color(0x8585ad), new Color(0x7c7ca1)) {
+    NICKEL(GTBranches.METALIFERIS, "nickel", true, new Color(0x8585ad), new Color(0x7c7ca1)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -348,7 +348,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(IRON, COPPER, 25);
         }
     },
-    ZINC(GTBranches.METAL, "zinc", true, new Color(0xf0def0), new Color(0xe1d1e1)) {
+    ZINC(GTBranches.METALIFERIS, "zinc", true, new Color(0xf0def0), new Color(0xe1d1e1)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -364,7 +364,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(IRON, TIN, 20);
         }
     },
-    SILVER(GTBranches.METAL, "zinc", true, new Color(0xc2c2d6), new Color(0xbfbfce)) {
+    SILVER(GTBranches.METALIFERIS, "zinc", true, new Color(0xc2c2d6), new Color(0xbfbfce)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -380,7 +380,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(LEAD, TIN, 20);
         }
     },
-    GOLD(GTBranches.METAL, "gold", true, new Color(0xebc633), new Color(0xd6b840)) {
+    GOLD(GTBranches.METALIFERIS, "gold", true, new Color(0xebc633), new Color(0xd6b840)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -396,7 +396,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(LEAD, COPPER, 20);
         }
     },
-    ALUMINIUM(GTBranches.MINERAL, "aluminium", true, new Color(0xb8b8ff), new Color(0xc1c1e6)) {
+    ALUMINIUM(GTBranches.MINERALLIS, "aluminium", true, new Color(0xb8b8ff), new Color(0xc1c1e6)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -412,7 +412,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(NICKEL, ZINC, 18);
         }
     },
-    TITANIUM(GTBranches.MINERAL, "titanium", true, new Color(0xcc99ff), new Color(0xccabed)) {
+    TITANIUM(GTBranches.MINERALLIS, "titanium", true, new Color(0xcc99ff), new Color(0xccabed)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -428,7 +428,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(REDSTONE, ALUMINIUM, 5);
         }
     },
-    CHROME(GTBranches.MINERAL, "chrome", true, new Color(0xeba1eb), new Color(0xe1b5e1)) {
+    CHROME(GTBranches.MINERALLIS, "chrome", true, new Color(0xeba1eb), new Color(0xe1b5e1)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -444,7 +444,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(TITANIUM, RUBY, 5).addMutationCondition(new MutationConditionRequiresResource("blockChrome"));
         }
     },
-    MANGANESE(GTBranches.MINERAL, "manganese", true, new Color(0xd5d5d5), new Color(0x999999)) {
+    MANGANESE(GTBranches.MINERALLIS, "manganese", true, new Color(0xd5d5d5), new Color(0x999999)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -460,7 +460,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(TITANIUM, ALUMINIUM, 5).addMutationCondition(new MutationConditionRequiresResource("blockManganese"));
         }
     },
-    TUNGSTEN(GTBranches.MINERAL, "tungsten", true, new Color(0x5c5c8a), new Color(0x717191)) {
+    TUNGSTEN(GTBranches.MINERALLIS, "tungsten", true, new Color(0x5c5c8a), new Color(0x717191)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -476,7 +476,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.HEROIC, MANGANESE, 5).addMutationCondition(new MutationConditionRequiresResource("blockTungsten"));
         }
     },
-    PLATINUM(GTBranches.MINERAL, "platinum", true, new Color(0xe6e6e6), new Color(0xededbe)) {
+    PLATINUM(GTBranches.MINERALLIS, "platinum", true, new Color(0xe6e6e6), new Color(0xededbe)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -492,7 +492,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(DIAMOND, CHROME, 5);
         }
     },
-    IRIDIUM(GTBranches.MINERAL, "iridium", true, new Color(0xdadada), new Color(0xbcbcca)) {
+    IRIDIUM(GTBranches.MINERALLIS, "iridium", true, new Color(0xdadada), new Color(0xbcbcca)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -508,7 +508,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(TUNGSTEN, PLATINUM, 5).addMutationCondition(new MutationConditionRequiresResource("blockIridium"));
         }
     },
-    URANIUM(GTBranches.RADIOACTIVE, "uranium", true, new Color(0x19af19), new Color(0x149314)) {
+    URANIUM(GTBranches.CRITICALIS, "uranium", true, new Color(0x19af19), new Color(0x149314)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -524,7 +524,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(BeeDefinition.AVENGING, PLATINUM, 5).addMutationCondition(new MutationConditionRequiresResource("blockUranium"));
         }
     },
-    PLUTONIUM(GTBranches.RADIOACTIVE, "platinum", true, new Color(0x335c33), new Color(0x638500)) {
+    PLUTONIUM(GTBranches.CRITICALIS, "platinum", true, new Color(0x335c33), new Color(0x638500)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
@@ -540,7 +540,7 @@ public enum GTBees implements IBeeDefinition {
             registerMutation(URANIUM, EMERALD, 5).addMutationCondition(new MutationConditionRequiresResource("blockPlutonium"));
         }
     },
-    NAQUADAH(GTBranches.RADIOACTIVE, "naquadah", true, new Color(0x003300), new Color(0x002000)) {
+    NAQUADAH(GTBranches.CRITICALIS, "naquadah", true, new Color(0x003300), new Color(0x002000)) {
         @Override
         protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies) {
             beeSpecies.addProduct(GTCombItem.getComb(GTCombs.SLAG, 1), 0.3f);
