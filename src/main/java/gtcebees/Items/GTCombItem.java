@@ -47,9 +47,10 @@ public class GTCombItem extends ItemForestry implements IColoredItem {
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
-        for (int i = 0; i < GTCombs.VALUES.length; i++) {
-            subItems.add(new ItemStack(this, 1, i));
-        }
+        if (tab == Tabs.tabApiculture)
+            for (int i = 0; i < GTCombs.VALUES.length; i++) {
+                subItems.add(new ItemStack(this, 1, i));
+            }
     }
 
 
