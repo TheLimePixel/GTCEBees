@@ -1,12 +1,6 @@
 package gtcebees;
 
-import gregtech.api.unification.material.type.Material;
-import gregtech.common.blocks.BlockCompressed;
-import gregtech.common.blocks.MetaBlocks;
 import gtcebees.Bees.GTBees;
-import gtcebees.Recipes.ForestryMachineRecipes;
-import gtcebees.Recipes.GTMachineRecipes;
-import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -43,13 +37,11 @@ public class GTCEBees {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        ForestryMachineRecipes.init();
         GTBees.initBees();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
-        GTMachineRecipes.postInit();
     }
 }
