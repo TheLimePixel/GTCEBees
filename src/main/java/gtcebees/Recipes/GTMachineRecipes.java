@@ -20,7 +20,7 @@ public class GTMachineRecipes {
         }
 
         //Non-generated Fluid Extractor Recipes
-        RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt(128).duration(256).inputs(ModuleCore.getItems().phosphor.getItemStack()).chancedOutput(OreDictUnifier.get(OrePrefix.dust, Materials.Phosphor), 1000).fluidOutputs(Materials.Lava.getFluid(800)).buildAndRegister();
+        RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt(128).duration(256).inputs(ModuleCore.getItems().phosphor.getItemStack()).chancedOutput(OreDictUnifier.get(OrePrefix.dust, Materials.Phosphor), 1000, 1000).fluidOutputs(Materials.Lava.getFluid(800)).buildAndRegister();
 
         //Comb Autoclave Recipes
         if (GTCEBeesConfig.Recipes.AutoclaverRecipes) {
