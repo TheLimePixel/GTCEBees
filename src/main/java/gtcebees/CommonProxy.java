@@ -37,7 +37,7 @@ public class CommonProxy {
                 SimpleRecipeBuilder builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder();
                 builder.inputs(recipe.getInput().copy());
                 for (ItemStack stack : recipe.getAllProducts().keySet()) {
-                    builder.chancedOutput(stack.copy(), (int) (recipe.getAllProducts().get(stack) * (float) Recipe.getMaxChancedValue()));
+                    builder.chancedOutput(stack.copy(), (int) (recipe.getAllProducts().get(stack) * (float) Recipe.getMaxChancedValue()), 1000);
                 }
                 builder.EUt(5);
                 builder.duration(128);
@@ -48,12 +48,12 @@ public class CommonProxy {
             for (ISqueezerRecipe recipe : RecipeManagers.squeezerManager.recipes()) {
                 if (recipe.getResources().size() != 1 || recipe.getResources().get(0).getItem() instanceof ItemFluidContainerForestry)
                     continue;
-                if (RecipeMaps.FLUID_EXTRACTION_RECIPES.findRecipe(Integer.MAX_VALUE, recipe.getResources(), Collections.EMPTY_LIST) != null)
+                if (RecipeMaps.FLUID_EXTRACTION_RECIPES.findRecipe(Integer.MAX_VALUE, recipe.getResources(), Collections.EMPTY_LIST, Integer.MAX_VALUE) != null)
                     continue;
                 SimpleRecipeBuilder builder = RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder();
                 builder.inputs(recipe.getResources().get(0).copy());
                 if (!recipe.getRemnants().isEmpty())
-                    builder.chancedOutput(recipe.getRemnants().copy(), (int) (recipe.getRemnantsChance() * (float) Recipe.getMaxChancedValue()));
+                    builder.chancedOutput(recipe.getRemnants().copy(), (int) (recipe.getRemnantsChance() * (float) Recipe.getMaxChancedValue()), 1000);
                 if (recipe.getFluidOutput() != null)
                     builder.fluidOutputs(recipe.getFluidOutput());
                 builder.EUt(5);
